@@ -16,8 +16,8 @@ spec:
     name: openshift-v4.12.6
 #  manifestsConfigMapRef:
 #    name: sushi
-  mirrorRegistryRef:
-    name: quay-mirror-config
+#  mirrorRegistryRef:
+#    name: quay-mirror-config
   networking:
     clusterNetwork:
       - cidr: 10.128.0.0/14
