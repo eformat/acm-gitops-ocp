@@ -51,12 +51,11 @@ metadata:
   name: global-policy
   namespace: open-cluster-management-global-set
 spec:
-  version: v2.5.12
-  # This enables the application set controller
   applicationSet: {}
-  # This enables the ArgoCD instance to use OpenShift OAuth
-  dex:
-    openShiftOAuth: true
+  sso:
+    dex:
+      openShiftOAuth: true
+    provider: dex
   resourceExclusions: |
     - apiGroups:
       - tekton.dev
@@ -108,8 +107,6 @@ spec:
         termination: reencrypt
     service:
       type: ''
-  tls:
-    ca: {}
   kustomizeBuildOptions: --enable-alpha-plugins --enable-helm
 ---
 kind: Role
