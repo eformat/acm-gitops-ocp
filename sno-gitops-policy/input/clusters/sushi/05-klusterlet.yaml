@@ -6,7 +6,7 @@ metadata:
   namespace: sushi
 spec:
   applicationManager:
-    argocdCluster: false
+#    argocdCluster: false
     enabled: true
   certPolicyController:
     enabled: true
