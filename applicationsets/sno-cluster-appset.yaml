@@ -7,12 +7,12 @@ metadata:
 spec:
   goTemplate: true
   generators:
-    - clusterDecisionResource:
-        configMapRef: acm-placement
-        labelSelector:
-          matchLabels:
-            cluster.open-cluster-management.io/placement: placement-all-openshift
-        requeueAfterSeconds: 180
+  - clusterDecisionResource:
+      configMapRef: acm-placement
+      labelSelector:
+        matchLabels:
+          cluster.open-cluster-management.io/placement: placement-all-openshift
+      requeueAfterSeconds: 180
   syncPolicy:
     preserveResourcesOnDeletion: false
   template:
