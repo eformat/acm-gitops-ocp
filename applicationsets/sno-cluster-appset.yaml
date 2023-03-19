@@ -4,6 +4,8 @@ kind: ApplicationSet
 metadata:
   name: sno-cluster
   namespace: open-cluster-management-global-set
+  labels:
+    rht-gitops.com/open-cluster-management-global-set: policies
 spec:
   goTemplate: true
   generators:
