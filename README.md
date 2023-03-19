@@ -1,6 +1,6 @@
 # ACM GitOps OpenShift BareMetal with Sushy
 
-ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy
+ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal cluster
 
 # 🤠 For the impatient
 
