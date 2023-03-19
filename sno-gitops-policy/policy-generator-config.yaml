@@ -7,7 +7,7 @@ placementBindingDefaults:
   name: ztp-gitops-sno
 policyDefaults:
   placement:
-    placementName: placement-team-argo
+    placementName: placement-ztp-gitops-sno
   categories:
     - CM Configuration Management
   complianceType: "musthave"
