@@ -1,5 +1,5 @@
 resources:
 - 00-provisioning.yaml
 - 01-assisted-service-config.yaml
-#- assisted-deployment-pull-secret.yaml
+- assisted-deployment-pull-secret-sealed.yaml
 - assisted-service-cm.yaml
