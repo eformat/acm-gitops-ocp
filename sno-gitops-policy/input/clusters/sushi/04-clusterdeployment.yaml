@@ -5,7 +5,7 @@ metadata:
   name: sushi
   namespace: sushi
 spec:
-  baseDomain: sushi.baz.eformat.me
+  baseDomain: baz.eformat.me
   clusterName: sushi
   controlPlaneConfig:
     servingCertificates: {}
