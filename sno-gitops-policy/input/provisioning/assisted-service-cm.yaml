@@ -1,0 +1,68 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quay-mirror-config
+  namespace: multicluster-engine
+  labels:
+    app: assisted-service
+data:
+  LOG_LEVEL: "debug"
+  ca-bundle.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDtDCCApygAwIBAgIUBZJWCqXklYgvtZS6+3ENonBlPZYwDQYJKoZIhvcNAQEL
+    BQAwaTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+    azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xGDAWBgNVBAMMD3F1
+    YXkuZWZvcm1hdC5tZTAeFw0yMzAyMjcwNTI1MzVaFw0yNTEyMTcwNTI1MzVaMGkx
+    CzAJBgNVBAYTAlVTMQswCQYDVQQIDAJWQTERMA8GA1UEBwwITmV3IFlvcmsxDTAL
+    BgNVBAoMBFF1YXkxETAPBgNVBAsMCERpdmlzaW9uMRgwFgYDVQQDDA9xdWF5LmVm
+    b3JtYXQubWUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDsGP8nMn+0
+    cgc5mEhH8nvRctf6PUGa/RxJrI9s5eXVPMGsJV3dish2j6rLct/r/SSkxpjKLa7z
+    QfPmZlFxnbYJroS4RMmkBNRwlXJxJg60gBfE3CE7Ow//otSBps9iBOUdNqebVgr2
+    sGO9fmNsecUlUTXE7/fgVwJ2AyZP5MypynSOFLsYkrVheiDkz+ODKmW0sfd1mLsO
+    UmVML01h6uWoCzxpXvKPfL5udn1cREgiR7IMux8eJ98QCJoTWUWNjEBedth8Fd+U
+    KFdJNf+59LFIEK9u/IMpQJFxoP1aLTwmobpWKebfVPYmfYRFW4Q7Z7YF6UOCnyhW
+    Ttulb18oE6abAgMBAAGjVDBSMAsGA1UdDwQEAwIC5DATBgNVHSUEDDAKBggrBgEF
+    BQcDATAaBgNVHREEEzARgg9xdWF5LmVmb3JtYXQubWUwEgYDVR0TAQH/BAgwBgEB
+    /wIBATANBgkqhkiG9w0BAQsFAAOCAQEAQj3PwCrIukWGFh7j1YTvt+jGg6lIJSoj
+    Rx8f1LRa/3YC9zJ+IXhlPqmImX01+c4/d30q3hAVI6qN/+hciWyfUHP7jkyXqG8F
+    TrEHc6nrtd6BV7ScqzWNUwpsPlyAQZnMNBFAs/F/qyoYBVHzZovQ+AUuHxpxHvI4
+    4LER9AUZOBWNREa0KcT2Rhq319jir49vXbZ6UXq+uBtUhZE0Y3UkfZczgIcLnU7T
+    eslP5jb2YkKrQRRPPOF12P2VTXkrc2quLWrhscMteND+vgKOKYx6yuKiZWsrkmSv
+    roCYMzW6HGv/1gSiaPc089Zrr8bgpVttr6eNLD0B2vBVEv3DpPAPmQ==
+    -----END CERTIFICATE-----
+
+  registries.conf: |
+    unqualified-search-registries = ["registry.access.redhat.com", "docker.io"]
+    short-name-mode = ""
+    
+    [[registry]]
+      prefix = ""
+      location = "quay.io/openshift-release-dev"
+      mirror-by-digest-only = false
+    
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/quay-io/openshift-release-dev"
+
+    [[registry]]
+      prefix = ""
+      location = "quay.io/openshift-release-dev/ocp-v4.0-art-dev"
+      mirror-by-digest-only = false
+    
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/quay-io/openshift-release-dev/ocp-v4.0-art-dev"
+
+    [[registry]]
+      prefix = ""
+      location = "quay.io/argoproj"
+      mirror-by-digest-only = false
+    
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/argoproj"
+    
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io"
+      mirror-by-digest-only = false
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io"

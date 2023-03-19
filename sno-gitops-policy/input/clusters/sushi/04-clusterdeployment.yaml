@@ -1,0 +1,24 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: sushi
+  namespace: sushi
+spec:
+  baseDomain: sushi.baz.eformat.me
+  clusterName: sushi
+  controlPlaneConfig:
+    servingCertificates: {}
+  installed: false
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: sushi
+    version: v1beta1
+  platform:
+    agentBareMetal:
+      agentSelector:
+        matchLabels:
+          cluster-name: "sushi"
+  pullSecretRef:
+    name: pull-secret

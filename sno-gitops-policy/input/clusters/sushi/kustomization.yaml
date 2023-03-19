@@ -1,0 +1,11 @@
+resources:
+- 00-namespace.yaml
+- 01-sealed-pull-secret.yaml
+- 01-sealed-bmc-secret.yaml
+- 03-agentclusterinstall.yaml
+- 04-clusterdeployment.yaml
+- 05-klusterlet.yaml
+- 06-managedcluster.yaml
+- 07-nmstate.yaml
+- 08-infraenv.yaml
+- 09-baremetalhost.yaml

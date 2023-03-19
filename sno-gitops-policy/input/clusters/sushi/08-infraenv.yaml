@@ -1,0 +1,30 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: InfraEnv
+metadata:
+  name: sushi
+  namespace: sushi
+  annotations:
+    argocd.argoproj.io/sync-options: Validate=false
+spec:
+#  proxy:
+#    httpProxy: <proxy>
+#    httpsProxy: <proxy>
+#    noProxy: <domain-or-ips-comma-sepparated>
+#  additionalNTPSources:
+#    - 0.rhel.pool.ntp.org
+  clusterRef:
+    name: sushi
+    namespace: sushi
+  sshAuthorizedKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH7Z7cBVHkK6atUAHj2sofWxd2PbGrIU8sss3+XYhbWDU96VdcGwv310seu5cCH72Ix/AESnlPALg2bzlMvFv7AMe9g8pSWluFCvWWMCnWyQkAy1Bkmb4f/5z6zjq/T0A1nbuhVh7dSd62yZ9aHCvxQvvYkiGB964Ih+F7oj3ssvZ4n5KFGcASayxd4GdyfcGQxrXaaTC0dth0UsN8a766eXGUBwd6SXWXkYvDoVMDNXEjdR4TsWMoSWbDxGL0mzz9P4R/J9pg8HWhf5+Eg64tMJdd8OM0PBpetQ9qhD1J49NHRwgtwMgh5NBIPsESXYxlVQ80vqv1p9GSr97tvF+F mike@virt'
+  agentLabelSelector:
+    matchLabels:
+      cluster-name: sushi
+  pullSecretRef:
+    name: pull-secret
+  nmStateConfigLabelSelector:
+    matchLabels:
+      cluster-name: sushi
+  cpuArchitecture: x86_64
+# User for modify ignition during discovery
+#  ignitionConfigOverride: ''

@@ -1,0 +1,151 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-gitops-operator
+  namespace: openshift-operators
+spec:
+  channel: stable
+  name: openshift-gitops-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  config:
+    env:
+    - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
+      value: "true"
+    - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+      value: fteam-ci-cd,openshift-gitops,open-cluster-management-global-set
+---
+apiVersion: apps.open-cluster-management.io/v1beta1
+kind: GitOpsCluster
+metadata:
+  name: global-policy
+  namespace: open-cluster-management-global-set
+spec:
+  argoServer:
+    cluster: local-cluster
+    argoNamespace: open-cluster-management-global-set
+  placementRef:
+    kind: Placement
+    apiVersion: cluster.open-cluster-management.io/v1beta1
+    name: placement-all-openshift
+    namespace: open-cluster-management-global-set
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  labels:
+    custom: gitops-operator-policy
+  name: placement-all-openshift
+  namespace: open-cluster-management-global-set
+spec:
+  predicates:
+  - requiredClusterSelector:
+      labelSelector:
+        matchExpressions:
+          - {key: useglobal, operator: In, values: ["true"]}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: global-policy
+  namespace: open-cluster-management-global-set
+spec:
+  version: v2.5.12
+  # This enables the application set controller
+  applicationSet: {}
+  # This enables the ArgoCD instance to use OpenShift OAuth
+  dex:
+    openShiftOAuth: true
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      clusters:
+      - '*'
+      kinds:
+      - TaskRun
+      - PipelineRun
+  tls:
+    ca: {}
+  groups:
+    - default
+  rbac:
+    defaultPolicy: 'role:readonly'
+    policy: |
+      g, cluster-admins, role:admin
+    scopes: '[groups]'
+  repo:
+    env:
+    - name: KUSTOMIZE_PLUGIN_HOME
+      value: /etc/kustomize/plugin
+    initContainers:
+    - name: policy-generator-install
+      image: quay.io/eformat/policy-generator-plugin-image:latest
+      command: ["/bin/bash"]
+      args: ["-c", "cp /var/tmp/PolicyGenerator /policy-generator/PolicyGenerator"]
+      volumeMounts:
+      - mountPath: /policy-generator
+        name: policy-generator
+    volumeMounts:
+    - mountPath: /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator
+      name: policy-generator
+    volumes:
+    - emptyDir: {}
+      name: policy-generator
+  statusBadgeEnabled: true
+  applicationInstanceLabelKey: rht-gitops.com/global-policy
+  server:
+    autoscale:
+      enabled: false
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: true
+      tls:
+        termination: reencrypt
+    service:
+      type: ''
+  tls:
+    ca: {}
+  kustomizeBuildOptions: --enable-alpha-plugins --enable-helm
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: open-cluster-management-global-set
+  name: permissions
+rules:
+- apiGroups: ["apps.open-cluster-management.io", "cluster.open-cluster-management.io"]
+  resources: ["placementrules", "placementdecisions"]
+  verbs: ["list"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: appset-rolebinding
+  namespace: open-cluster-management-global-set
+subjects:
+- kind: ServiceAccount
+  name: global-policy-applicationset-controller
+  namespace: open-cluster-management-global-set
+roleRef:
+  kind: Role
+  name: permissions
+  namespace: open-cluster-management-global-set
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-manager-admin-to-argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: global-policy-argocd-application-controller
+  namespace: open-cluster-management-global-set

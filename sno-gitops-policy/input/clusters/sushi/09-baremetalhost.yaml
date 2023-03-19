@@ -1,0 +1,22 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "sushi"
+  labels:
+    infraenvs.agent-install.openshift.io: "sushi"
+  name: sushi
+  namespace: sushi
+spec:
+  automatedCleaningMode: metadata
+  rootDeviceHints:
+    deviceName: /dev/vda
+  bmc:
+    address: redfish-virtualmedia+http://192.168.86.27:8000/redfish/v1/Systems/8ed24a85-d093-4cd8-a71f-df772d4f132a
+    credentialsName: bmc-secret
+    disableCertificateVerification: true
+  bootMACAddress: '52:54:00:22:4d:4b'
+  bootMode: UEFI
+  online: true

@@ -1,0 +1,40 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: sushi
+  namespace: sushi
+  labels:
+    cluster-name: sushi
+spec:
+  config:
+    dns-resolver:
+      config:
+        server:
+          - 192.168.130.1
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 192.168.130.11
+              prefix-length: 24
+          dhcp: false
+          enabled: true
+        ipv6:
+          enabled: false
+        macAddress: '52:54:00:22:4d:4b'
+        name: enp1s0
+        state: up
+        type: ethernet
+    routes:
+      config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.130.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.86.0/0
+            next-hop-address: 192.168.130.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  interfaces:
+    - macAddress: '52:54:00:22:4d:4b'
+      name: enp1s0

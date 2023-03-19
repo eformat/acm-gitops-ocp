@@ -1,0 +1,11 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  name: sushi
+  namespace: sushi
+  labels:
+    name: sushi
+spec:
+  hubAcceptsClient: true
+  leaseDurationSeconds: 60
