@@ -14,6 +14,7 @@ oc apply -f bootstrap-acm-global-gitops/setup.yaml
 
 - Adjust all `sno-gitops-policy/input` templates to suit your environment. I'm using:
   - a quay local mirror
+  - sushy to emulate bare metal on libvirt
   - sealed secrets for bmc, pull secrets
   - nmstate for bm host configuration
   - cluster domain - dns setup externally
