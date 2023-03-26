@@ -19,7 +19,13 @@ oc apply -f bootstrap-acm-global-gitops/setup.yaml
   - nmstate for bm host configuration
   - cluster domain - dns setup externally
 
-- Install Team based ArgoCD's
+- Install Assisted Service Provisioning config
+
+```bash
+oc apply -f applicationsets/assisted-service-appset.yaml
+```
+
+- Install SNO Cluster
 
 ```bash
 oc apply -f applicationsets/sno-cluster-appset.yaml
