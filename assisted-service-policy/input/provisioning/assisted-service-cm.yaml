@@ -38,11 +38,11 @@ data:
     
     [[registry]]
       prefix = ""
-      location = "quay.io/openshift-release-dev"
+      location = "quay.io/openshift-release-dev/ocp-release"
       mirror-by-digest-only = false
     
       [[registry.mirror]]
-        location = "quay.eformat.me:8443/quay-io/openshift-release-dev"
+        location = "quay.eformat.me:8443/quay-io/openshift-release-dev/ocp-release"
 
     [[registry]]
       prefix = ""
