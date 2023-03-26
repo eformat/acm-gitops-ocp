@@ -23,8 +23,8 @@ spec:
     resources:
       requests:
         storage: 50Gi
-  mirrorRegistryRef:
-    name: quay-mirror-config
+#  mirrorRegistryRef:
+#    name: quay-mirror-config
   osImages:
   - openshiftVersion: "4.8"
     cpuArchitecture: x86_64
