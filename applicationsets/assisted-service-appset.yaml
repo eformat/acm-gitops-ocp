@@ -19,7 +19,7 @@ spec:
     preserveResourcesOnDeletion: false
   template:
     metadata:
-      name: sno-cluster-{{.name}}
+      name: assisted-service-{{.name}}
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
     spec:
