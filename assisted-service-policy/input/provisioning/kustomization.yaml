@@ -3,3 +3,4 @@ resources:
 - 01-assisted-service-config.yaml
 - assisted-deployment-pull-secret-sealed.yaml
 - assisted-service-cm.yaml
+- cluster-imageset.yaml
