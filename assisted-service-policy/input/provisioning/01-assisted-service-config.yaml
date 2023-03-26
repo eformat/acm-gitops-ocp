@@ -49,5 +49,5 @@ spec:
   - openshiftVersion: "4.12"
     version: "412.86.202302282003-0"
     rootFSUrl: http://quay.eformat.me/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
-    url: http://quay.eformat.me/4.12/4.12.3/rhcos-4.12.3-x86_64-live.x86_64.iso
+    url: http://quay.eformat.me/rhcos-4.12.3-x86_64-live.x86_64.iso
     cpuArchitecture: "x86_64"
