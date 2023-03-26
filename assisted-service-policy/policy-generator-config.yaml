@@ -7,7 +7,7 @@ placementBindingDefaults:
   name: ztp-assisted-service
 policyDefaults:
   placement:
-    placementName: placement-ztp-gitops-sno
+    placementName: placement-ztp-assisted-service
   categories:
     - CM Configuration Management
   complianceType: "musthave"
