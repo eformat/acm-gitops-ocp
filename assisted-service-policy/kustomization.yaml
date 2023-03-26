@@ -1,0 +1,5 @@
+resources:
+  - placement.yaml
+
+generators:
+  - policy-generator-config.yaml
