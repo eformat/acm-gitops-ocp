@@ -29,7 +29,7 @@ spec:
         namespace: open-cluster-management-global-set
       source:
         repoURL: https://github.com/eformat/acm-gitops-ocp.git
-        path: assisted-service
+        path: assisted-service-policy
         targetRevision: main
       syncPolicy:
         automated:
