@@ -47,7 +47,7 @@ spec:
     url: http://quay.eformat.me/rhcos-4.11.9-x86_64-live.x86_64.iso
     cpuArchitecture: "x86_64"
   - openshiftVersion: "4.12"
-    version: "412.86.202303211731-0"
+    version: "412.86.202303011010-0"
     rootFSUrl: http://quay.eformat.me/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
     url: http://quay.eformat.me/rhcos-4.12.3-x86_64-live.x86_64.iso
     cpuArchitecture: "x86_64"
