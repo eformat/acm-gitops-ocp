@@ -41,7 +41,7 @@ data:
       mirror-by-digest-only = true
     
       [[registry.mirror]]
-        location = "quay.eformat.me:8443/quay-io/openshift-release-dev/ocp-release"
+        location = "quay.eformat.me:8443/ocp4-mirror"
 
     [[registry]]
       prefix = ""
@@ -49,15 +49,7 @@ data:
       mirror-by-digest-only = true
     
       [[registry.mirror]]
-        location = "quay.eformat.me:8443/quay-io/openshift-release-dev/ocp-v4.0-art-dev"
-
-    [[registry]]
-      prefix = ""
-      location = "quay.io/argoproj"
-      mirror-by-digest-only = false
-    
-      [[registry.mirror]]
-        location = "quay.eformat.me:8443/argoproj"
+        location = "quay.eformat.me:8443/ocp4-mirror"
     
     [[registry]]
       prefix = ""
