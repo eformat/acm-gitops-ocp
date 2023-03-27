@@ -11,4 +11,5 @@ kind: ClusterImageSet
 metadata:
   name: openshift-v4.12.7
 spec:
-  releaseImage: quay.io/openshift-release-dev/ocp-release:4.12.7-x86_64
+  #releaseImage: quay.io/openshift-release-dev/ocp-release:4.12.7-x86_64
+  releaseImage: quay.io/openshift-release-dev/ocp-release@sha256:bd712a7aa5c1763870e721f92e19104c3c1b930d1a7d550a122c0ebbe2513aee
