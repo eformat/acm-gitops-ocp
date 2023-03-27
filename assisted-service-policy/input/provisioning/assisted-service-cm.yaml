@@ -33,6 +33,8 @@ data:
     -----END CERTIFICATE-----
 
   registries.conf: |
+    unqualified-search-registries = ["registry.access.redhat.com", "docker.io"]
+
     [[registry]]
       prefix = ""
       location = "quay.io/openshift-release-dev/ocp-release"
