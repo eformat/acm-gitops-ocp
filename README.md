@@ -131,7 +131,6 @@ virt-install \
     --network=network:${NET_NAME},mac=${MAC},driver.queues=4 \
     --events on_reboot=restart \
     --disk path=/dev/fedora/${VM_NAME},io=io_uring,cache='writeback',discard='unmap' \
-    --disk target=sda,device=cdrom \
     --print-xml > $tmpfile
 
 virsh define --file $tmpfile
