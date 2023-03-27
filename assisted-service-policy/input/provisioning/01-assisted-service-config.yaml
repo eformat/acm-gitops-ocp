@@ -25,7 +25,7 @@ spec:
         storage: 50Gi
 #  mirrorRegistryRef:
 #    name: quay-mirror-config
-  # osImages:
+  osImages:
   # - openshiftVersion: "4.8"
   #   cpuArchitecture: x86_64
   #   rootFSUrl: http://quay.eformat.me/rhcos-4.8.14-x86_64-live-rootfs.x86_64.img
@@ -46,12 +46,12 @@ spec:
   #   rootFSUrl: http://quay.eformat.me/rhcos-4.11.9-x86_64-live-rootfs.x86_64.img
   #   url: http://quay.eformat.me/rhcos-4.11.9-x86_64-live.x86_64.iso
   #   cpuArchitecture: "x86_64"
-  # - openshiftVersion: "4.12"
-  #   version: "412.86.202302282003-0"
-  #   rootFSUrl: http://quay.eformat.me/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
-  #   url: http://quay.eformat.me/rhcos-4.12.3-x86_64-live.x86_64.iso
-  #   cpuArchitecture: "x86_64"
-  osImages:
+  - openshiftVersion: "4.12"
+    version: "412.86.202302282003-0"
+    rootFSUrl: http://quay.eformat.me/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
+    url: http://quay.eformat.me/rhcos-4.12.3-x86_64-live.x86_64.iso
+    cpuArchitecture: "x86_64"
+  # osImages:
   # - openshiftVersion: "4.8"
   #   cpuArchitecture: x86_64
   #   rootFSUrl: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.8/4.8.14/rhcos-4.8.14-x86_64-live-rootfs.x86_64.img
@@ -72,8 +72,8 @@ spec:
   #   rootFSUrl: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.11/4.11.9/rhcos-4.11.9-x86_64-live-rootfs.x86_64.img
   #   url: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.11/4.11.9/rhcos-4.11.9-x86_64-live.x86_64.iso
   #   cpuArchitecture: "x86_64"
-  - openshiftVersion: "4.12"
-    version: "412.86.202302282003-0"
-    rootFSUrl: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.3/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
-    url: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.3/rhcos-4.12.3-x86_64-live.x86_64.iso
-    cpuArchitecture: "x86_64"
+  # - openshiftVersion: "4.12"
+  #   version: "412.86.202302282003-0"
+  #   rootFSUrl: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.3/rhcos-4.12.3-x86_64-live-rootfs.x86_64.img
+  #   url: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.3/rhcos-4.12.3-x86_64-live.x86_64.iso
+  #   cpuArchitecture: "x86_64"
