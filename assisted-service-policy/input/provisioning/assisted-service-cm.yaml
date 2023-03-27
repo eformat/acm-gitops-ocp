@@ -34,7 +34,7 @@ data:
 
   registries.conf: |
     unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
-    
+
     [[registry]]
       prefix = ""
       location = "quay.io/openshift-release-dev/ocp-release"
