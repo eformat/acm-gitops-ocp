@@ -140,7 +140,7 @@ rm $tmpfile
 
 ## Notes
 
-Useful links and workarounds for mirror registry and disconnected installs. Using a secret for a quay transparent mirror only in this example.
+Useful links and workarounds for mirror registry and disconnected installs. I am using a pull-secret for the quay transparent mirror only in this example.
 
 - https://www.youtube.com/watch?v=oVlRDuCD6ic - Quay Transparent Proxy-Pull Through Cache - `FEATURE_PROXY_CACHE`
 - https://github.com/openshift/assisted-service/blob/master/docs/operator.md#mirror-registry-configuration
