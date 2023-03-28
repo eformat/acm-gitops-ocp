@@ -5,8 +5,9 @@ ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal c
 # 🤠 For the impatient
 
 - Install RHACM Operator 2.6/2.7+ into your OpenShift4 cluster
-- Label you local cluster with `useglobal=true` and `ztp-gitops-sno=true`
-- Boostrap global ArgoCD for policy and Cluster installs
+- Label your local hub cluster with `ztp-assisted-service=true` to setup provisioning
+- Label your local hub cluster with `ztp-gitops-sno=true` to deploy a sno bm instance
+- Bootstrap global ArgoCD for policy and Cluster installs
 
 ```bash
 oc apply -f bootstrap-acm-global-gitops/setup.yaml
