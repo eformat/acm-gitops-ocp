@@ -1,0 +1,62 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "sushi-worker"
+  labels:
+    infraenvs.agent-install.openshift.io: "sushi"
+  name: sushi-worker
+  namespace: sushi
+spec:
+  automatedCleaningMode: metadata
+  rootDeviceHints:
+    deviceName: /dev/vda
+  bmc:
+    address: redfish-virtualmedia+http://192.168.86.27:8000/redfish/v1/Systems/270ea2ae-a69d-4b91-a926-1695dc3e4779
+    credentialsName: bmc-secret
+    disableCertificateVerification: true
+  bootMACAddress: '52:54:00:22:4d:4c'
+  bootMode: UEFI
+  online: true
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: sushi-worker
+  namespace: sushi
+  labels:
+    cluster-name: sushi
+spec:
+  config:
+    dns-resolver:
+      config:
+        server:
+          - 192.168.130.1
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 192.168.130.12
+              prefix-length: 24
+          dhcp: false
+          enabled: true
+        ipv6:
+          enabled: false
+        macAddress: '52:54:00:22:4d:4c'
+        name: enp1s0
+        state: up
+        type: ethernet
+    routes:
+      config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.130.1
+            next-hop-interface: enp1s0
+            table-id: 254
+          - destination: 192.168.86.0/0
+            next-hop-address: 192.168.130.1
+            next-hop-interface: enp1s0
+            table-id: 254
+  interfaces:
+    - macAddress: '52:54:00:22:4d:4c'
+      name: enp1s0

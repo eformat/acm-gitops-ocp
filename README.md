@@ -32,6 +32,12 @@ oc apply -f applicationsets/assisted-service-appset.yaml
 oc apply -f applicationsets/sno-cluster-appset.yaml
 ```
 
+- Add an extra worker node to your SNO cluster (move this file into `clusters/sushi` folder when gitops'ing)
+
+```bash
+oc apply -f 10-extra-workers-baremetalhost.yaml
+```
+
 # WIP
 
  This uses the [PR to implement kustomizeOptions](https://github.com/open-cluster-management-io/policy-generator-plugin/pull/109)
