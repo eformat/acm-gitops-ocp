@@ -38,6 +38,12 @@ oc apply -f applicationsets/sno-cluster-appset.yaml
 oc apply -f 10-extra-workers-baremetalhost.yaml
 ```
 
+- Update Cluster Version
+
+```bash
+oc apply -f applicationsets/update-cluster-version-appset.yaml
+```
+
 # WIP
 
  This uses the [PR to implement kustomizeOptions](https://github.com/open-cluster-management-io/policy-generator-plugin/pull/109)
