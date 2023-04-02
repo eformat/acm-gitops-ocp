@@ -169,6 +169,10 @@ MAC=52:54:00:22:4d:4c
 
 Using libvirt networking in a lab. Here's the setup.
 
+- `baz` - this is a ACM hub instance (also a SNO)
+- `sushi` - this is the BM SNO gitops deployed instance
+- `sushi-worker` - this is the BM worker instance added to sushi SNO post cluster install
+
 ```bash
 cat <<EOF > /etc/libvirt/qemu/networks/baz.xml
 <network>
