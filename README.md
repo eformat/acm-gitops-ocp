@@ -46,9 +46,9 @@ oc apply -f 10-extra-workers-baremetalhost.yaml
 oc apply -f applicationsets/update-cluster-version-appset.yaml
 ```
 
-# WIP
+# WIP - Helm & PolicyGenerator
 
- This uses the [PR to implement kustomizeOptions](https://github.com/open-cluster-management-io/policy-generator-plugin/pull/109)
+This uses the [PR to implement kustomizeOptions](https://github.com/open-cluster-management-io/policy-generator-plugin/pull/109) - we don't use helm yet in this repo, but it is enabled.
 
 ```yaml
 policies:
@@ -63,6 +63,8 @@ policies:
 # ZTP SNO Instance
 
 ## Sushy
+
+BMC emulator integrated into libvirt.
 
 ```bash
 # sushy on host running vms
@@ -121,6 +123,8 @@ curl -s http://$REDFISH_HOST:$REDFISH_PORT/redfish/v1/Managers/$REDFISH_MANAGER/
 
 ## Define a libvirt vm for sno bm
 
+BM SNO instance `sushi`
+
 ```bash
 VM_NAME=sushi
 NET_NAME=baz
@@ -154,7 +158,7 @@ rm $tmpfile
 
 ## Define a libvirt vm for sno bm worker node
 
-Same virt-install code as above but with these env.vars:
+Worker node we add to `sushi` SNO cluster. Use the same virt-install code as above but with these env.vars:
 
 ```bash
 VM_NAME=sushi-worker
