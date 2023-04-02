@@ -19,7 +19,7 @@ oc apply -f bootstrap-acm-global-gitops/setup.yaml
   - sushy to emulate bare metal on libvirt
   - sealed secrets for bmc, pull secrets
   - nmstate for bm host configuration
-  - cluster domain - dns setup externally
+  - cluster domain - dns setup in libvirt (for install) and externally (for access)
 
 - Install Assisted Service Provisioning config
 
