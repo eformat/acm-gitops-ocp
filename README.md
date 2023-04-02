@@ -1,6 +1,6 @@
 # ACM GitOps OpenShift BareMetal with Sushy
 
-ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal cluster
+ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal cluster, simple lifecycle management (add worker node, update the cluster version).
 
 # 🤠 For the impatient
 
@@ -9,6 +9,7 @@ ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal c
 - Label your local hub cluster with `ztp-gitops-sno=true` to deploy a sno bm instance
 - Label your cluster(s) with `update-cluster-version=true` to update the cluster version
 - Bootstrap global ArgoCD for policy and Cluster installs
+- Add a worker node to your SNO instance post install
 
 ```bash
 oc apply -f bootstrap-acm-global-gitops/setup.yaml
