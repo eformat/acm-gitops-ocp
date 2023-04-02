@@ -1,6 +1,6 @@
 # ACM GitOps OpenShift BareMetal with Sushy
 
-ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal cluster, simple lifecycle management (add worker node, update the cluster version).
+ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal cluster, simple lifecycle management (add worker node, update the cluster version). Uses a Quay transparent mirror to simulate disconnected installation.
 
 # 🤠 For the impatient
 
