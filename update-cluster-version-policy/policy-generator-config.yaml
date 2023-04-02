@@ -1,0 +1,31 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: update-cluster-version
+placementBindingDefaults:
+  name: update-cluster-version
+policyDefaults:
+  placement:
+    placementName: placement-update-cluster-version
+  categories:
+    - CM Configuration Management
+  complianceType: "musthave"
+  controls: 
+    - CM-2 Baseline Configuration
+  consolidateManifests: false
+  disabled: false
+  namespace: open-cluster-management-global-set
+  pruneObjectBehavior: "None"
+  remediationAction: enforce
+  severity: medium
+  standards:
+    - NIST SP 800-53
+  policyAnnotations: {"argocd.argoproj.io/compare-options": "IgnoreExtraneous"}
+policies:
+  - name: update-cluster-version
+    manifests:
+      - path: input/
+        kustomizeOptions:
+          enableAlphaPlugins: true
+          enableHelm: true

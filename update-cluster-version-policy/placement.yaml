@@ -1,0 +1,14 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  labels:
+    custom: update-cluster-version-policy
+  name: placement-update-cluster-version
+  namespace: open-cluster-management-global-set
+spec:
+  predicates:
+  - requiredClusterSelector:
+      labelSelector:
+        matchExpressions:
+          - {key: update-cluster-version, operator: In, values: ["true"]}
