@@ -151,6 +151,65 @@ virsh define --file $tmpfile
 rm $tmpfile
 ```
 
+## Define a libvirt vm for sno bm worker node
+
+Same virt-install code as above but with these env.vars:
+
+```bash
+VM_NAME=sushi-worker
+NET_NAME=baz
+OS_VARIANT="fedora-coreos-stable"
+RAM_MB="8192"
+DISK_GB="20"
+CPU_CORE="4"
+MAC=52:54:00:22:4d:4c
+```
+
+## Networking
+
+Using libvirt networking in a lab. Here's the setup.
+
+```bash
+cat <<EOF > /etc/libvirt/qemu/networks/baz.xml
+<network>
+  <name>baz</name>
+  <uuid>fc23191f-de21-4bf5-774b-98711b9f3d9e</uuid>
+  <forward mode='nat' size='1500'/>
+  <bridge name='tt0' stp='on' delay='0'/>
+  <mac address='52:54:00:22:4d:3a'/>
+  <domain name='eformat.me'/>
+  <dns enable='yes'>
+    <host ip='192.168.130.10'>
+      <hostname>api.baz.eformat.me</hostname>
+      <hostname>api-int.baz.eformat.me</hostname>
+      <hostname>console-openshift-console.apps.baz.eformat.me</hostname>
+      <hostname>oauth-openshift.apps.baz.eformat.me</hostname>
+      <hostname>canary-openshift-ingress-canary.apps.baz.eformat.me</hostname>
+    </host>
+    <host ip='192.168.130.11'>
+      <hostname>api.sushi.baz.eformat.me</hostname>
+      <hostname>api-int.sushi.baz.eformat.me</hostname>
+      <hostname>console-openshift-console.apps.sushi.baz.eformat.me</hostname>
+      <hostname>oauth-openshift.apps.sushi.baz.eformat.me</hostname>
+      <hostname>canary-openshift-ingress-canary.apps.sushi.baz.eformat.me</hostname>
+    </host>
+  </dns>
+  <ip family='ipv4' address='192.168.130.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.130.20' end='192.168.130.254'/>
+      <host mac='52:54:00:22:4d:4a' name='baz' ip='192.168.130.10'/>
+      <host mac='52:54:00:22:4d:4b' name='sushi' ip='192.168.130.11'/>
+      <host mac='52:54:00:22:4d:4c' name='sushi-worker' ip='192.168.130.12'/>
+    </dhcp>
+  </ip>
+</network>
+EOF
+
+virsh net-define /etc/libvirt/qemu/networks/baz.xml
+virsh net-start baz
+virsh net-autostart baz
+```
+
 ## Notes
 
 Useful links and workarounds for mirror registry and disconnected installs. I am using a pull-secret for the quay transparent mirror only in this example.
