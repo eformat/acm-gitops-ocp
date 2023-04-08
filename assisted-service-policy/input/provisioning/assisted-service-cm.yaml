@@ -53,7 +53,21 @@ data:
 
     [[registry]]
       prefix = ""
-      location = "registry.redhat.io"
+      location = "registry.redhat.io/redhat"
+      mirror-by-digest-only = false
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io"
+
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/rhacm2"
+      mirror-by-digest-only = false
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io"
+
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine"
       mirror-by-digest-only = false
       [[registry.mirror]]
         location = "quay.eformat.me:8443/registry-redhat-io"
