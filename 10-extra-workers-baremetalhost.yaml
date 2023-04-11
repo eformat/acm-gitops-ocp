@@ -14,7 +14,7 @@ spec:
   rootDeviceHints:
     deviceName: /dev/vda
   bmc:
-    address: redfish-virtualmedia+http://192.168.86.27:8000/redfish/v1/Systems/328dee7e-476c-4fd0-8f99-a5fd2362085e
+    address: redfish-virtualmedia+http://192.168.86.27:8000/redfish/v1/Systems/bebc6013-a298-4868-a294-1d0b4b436ed5
     credentialsName: bmc-secret
     disableCertificateVerification: true
   bootMACAddress: '52:54:00:22:4d:4c'
