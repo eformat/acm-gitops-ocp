@@ -46,6 +46,13 @@ oc apply -f 10-extra-workers-baremetalhost.yaml
 oc apply -f applicationsets/update-cluster-version-appset.yaml
 ```
 
+- Post install registry mirrors for marketplace (needs `mirror-by-digest-only = false`)
+
+```bash
+butane 99-master-mirror-by-digest-registries.bu -o 99-master-mirror-by-digest-registries.yaml
+oc apply -f 99-master-mirror-by-digest-registries.yaml
+```
+
 # WIP - Helm & PolicyGenerator
 
 This uses the [PR to implement kustomizeOptions](https://github.com/open-cluster-management-io/policy-generator-plugin/pull/109) - we don't use helm yet in this repo, but it is enabled.

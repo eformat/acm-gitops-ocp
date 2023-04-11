@@ -53,13 +53,6 @@ data:
 
     [[registry]]
       prefix = ""
-      location = "registry.redhat.io/redhat"
-      mirror-by-digest-only = true
-      [[registry.mirror]]
-        location = "quay.eformat.me:8443/registry-redhat-io/redhat"
-
-    [[registry]]
-      prefix = ""
       location = "registry.redhat.io/rhacm2"
       mirror-by-digest-only = true
       [[registry.mirror]]
