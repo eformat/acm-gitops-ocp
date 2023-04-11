@@ -50,3 +50,10 @@ data:
     
       [[registry.mirror]]
         location = "quay.eformat.me:8443/ocp4-mirror/ocp-v4.0-art-dev"
+
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/redhat"
+      mirror-by-digest-only = true
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io/redhat"
