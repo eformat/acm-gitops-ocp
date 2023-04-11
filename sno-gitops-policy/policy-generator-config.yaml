@@ -16,7 +16,7 @@ policyDefaults:
   consolidateManifests: false
   disabled: false
   namespace: open-cluster-management-global-set
-  pruneObjectBehavior: "None" #"DeleteAll"
+  pruneObjectBehavior: "DeleteAll"
   remediationAction: enforce
   severity: medium
   standards:
