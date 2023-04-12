@@ -32,8 +32,8 @@ data:
     roCYMzW6HGv/1gSiaPc089Zrr8bgpVttr6eNLD0B2vBVEv3DpPAPmQ==
     -----END CERTIFICATE-----
 
-   registries.conf: |
-     unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
+  registries.conf: |
+    unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
 
   #   [[registry]]
   #     prefix = ""
