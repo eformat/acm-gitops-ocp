@@ -51,16 +51,16 @@ data:
       [[registry.mirror]]
         location = "quay.eformat.me:8443/ocp4-mirror/ocp-v4.0-art-dev"
 
-  #   [[registry]]
-  #     prefix = ""
-  #     location = "registry.redhat.io/rhacm2"
-  #     mirror-by-digest-only = true
-  #     [[registry.mirror]]
-  #       location = "quay.eformat.me:8443/registry-redhat-io/rhacm2"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/rhacm2"
+      mirror-by-digest-only = true
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io/rhacm2"
 
-  #   [[registry]]
-  #     prefix = ""
-  #     location = "registry.redhat.io/multicluster-engine"
-  #     mirror-by-digest-only = true
-  #     [[registry.mirror]]
-  #       location = "quay.eformat.me:8443/registry-redhat-io/multicluster-engine"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine"
+      mirror-by-digest-only = true
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/registry-redhat-io/multicluster-engine"
