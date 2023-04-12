@@ -35,21 +35,21 @@ data:
   registries.conf:
     unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
 
-  #   [[registry]]
-  #     prefix = ""
-  #     location = "quay.io/openshift-release-dev/ocp-release"
-  #     mirror-by-digest-only = true
+    [[registry]]
+      prefix = ""
+      location = "quay.io/openshift-release-dev/ocp-release"
+      mirror-by-digest-only = true
     
-  #     [[registry.mirror]]
-  #       location = "quay.eformat.me:8443/ocp4-mirror/ocp-release"
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/ocp4-mirror/ocp-release"
 
-  #   [[registry]]
-  #     prefix = ""
-  #     location = "quay.io/openshift-release-dev/ocp-v4.0-art-dev"
-  #     mirror-by-digest-only = true
+    [[registry]]
+      prefix = ""
+      location = "quay.io/openshift-release-dev/ocp-v4.0-art-dev"
+      mirror-by-digest-only = true
     
-  #     [[registry.mirror]]
-  #       location = "quay.eformat.me:8443/ocp4-mirror/ocp-v4.0-art-dev"
+      [[registry.mirror]]
+        location = "quay.eformat.me:8443/ocp4-mirror/ocp-v4.0-art-dev"
 
   #   [[registry]]
   #     prefix = ""
