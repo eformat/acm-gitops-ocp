@@ -33,8 +33,7 @@ data:
     -----END CERTIFICATE-----
 
   registries.conf:
-
-  #   unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
+    unqualified-search-registries = ["registry.redhat.io", "registry.access.redhat.com", "docker.io"]
 
   #   [[registry]]
   #     prefix = ""
