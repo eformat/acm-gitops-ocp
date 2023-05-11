@@ -13,7 +13,7 @@ spec:
   clusterDeploymentRef:
     name: sushi
   imageSetRef:
-    name: openshift-v4.12.7
+    name: openshift-v4.12.15
 #  manifestsConfigMapRef:
 #    name: sushi
 #  mirrorRegistryRef:
