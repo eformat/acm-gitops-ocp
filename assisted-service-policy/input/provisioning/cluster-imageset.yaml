@@ -13,3 +13,10 @@ metadata:
 spec:
   #releaseImage: quay.io/openshift-release-dev/ocp-release:4.12.7-x86_64
   releaseImage: quay.io/openshift-release-dev/ocp-release@sha256:bd712a7aa5c1763870e721f92e19104c3c1b930d1a7d550a122c0ebbe2513aee
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterImageSet
+metadata:
+  name: openshift-v4.12.15
+spec:
+  releaseImage: quay.io/openshift-release-dev/ocp-release@sha256:0e0e42534fd5c999daf0377dec44e739e212dbad876937c6b816c2f3d1552208
