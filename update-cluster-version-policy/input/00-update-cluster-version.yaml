@@ -5,4 +5,4 @@ metadata:
   name: version
 spec:
   desiredUpdate:
-    version: 4.12.18
+    version: 4.12.19
