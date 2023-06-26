@@ -4,7 +4,7 @@ kind: AgentServiceConfig
 metadata:
   name: agent
   namespace: open-cluster-management
-  annotations:
+#  annotations:
 #    unsupported.agent-install.openshift.io/assisted-service-configmap: my-assisted-service-config
 #    unsupported.agent-install.openshift.io/assisted-image-service-skip-verify-tls: true
 spec:
