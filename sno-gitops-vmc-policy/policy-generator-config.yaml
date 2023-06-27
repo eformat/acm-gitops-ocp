@@ -7,7 +7,7 @@ placementBindingDefaults:
   name: ztp-gitops-sno-vmc
 policyDefaults:
   placement:
-    placementName: placement-ztp-gitops-sno
+    placementName: placement-ztp-gitops-sno-vmc
   categories:
     - CM Configuration Management
   complianceType: "musthave"
