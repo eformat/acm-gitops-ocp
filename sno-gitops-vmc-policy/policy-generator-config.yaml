@@ -1,0 +1,31 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: ztp-gitops-sno-vmc
+placementBindingDefaults:
+  name: ztp-gitops-sno-vmc
+policyDefaults:
+  placement:
+    placementName: placement-ztp-gitops-sno
+  categories:
+    - CM Configuration Management
+  complianceType: "musthave"
+  controls: 
+    - CM-2 Baseline Configuration
+  consolidateManifests: false
+  disabled: false
+  namespace: open-cluster-management-global-set
+  pruneObjectBehavior: "DeleteAll"
+  remediationAction: enforce
+  severity: medium
+  standards:
+    - NIST SP 800-53
+  policyAnnotations: {"argocd.argoproj.io/compare-options": "IgnoreExtraneous"}
+policies:
+  - name: ztp-gitops-sno-vmc
+    manifests:
+      - path: input/
+        kustomizeOptions:
+          enableAlphaPlugins: true
+          enableHelm: true

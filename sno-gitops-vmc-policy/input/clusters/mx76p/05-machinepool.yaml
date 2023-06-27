@@ -1,0 +1,18 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: cluster-mx76p-worker
+  namespace: 'cluster-mx76p'
+spec:
+  clusterDeploymentRef:
+    name: 'cluster-mx76p'
+  name: worker
+  platform:
+    vsphere:
+      cpus: 4
+      coresPerSocket: 2
+      memoryMB: 16384
+      osDisk:
+        diskSizeGB: 120
+  replicas: 3
