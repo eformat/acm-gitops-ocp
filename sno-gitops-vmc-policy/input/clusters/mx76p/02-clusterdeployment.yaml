@@ -17,6 +17,7 @@ spec:
   installed: false
   platform:
     vsphere:
+      clusterOSImage: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.13/latest/rhcos-4.13.0-x86_64-vmware.x86_64.ova
       cluster: Cluster-1
       certificatesSecretRef:
         name: cluster-mx76p-vsphere-certs
