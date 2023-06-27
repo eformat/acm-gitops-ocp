@@ -19,7 +19,7 @@ spec:
     preserveResourcesOnDeletion: false
   template:
     metadata:
-      name: sno-cluster-{{.name}}
+      name: sno-cluster-vmc-{{.name}}
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
     spec:
