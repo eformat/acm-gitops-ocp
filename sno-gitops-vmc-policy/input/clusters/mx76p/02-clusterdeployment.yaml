@@ -15,6 +15,11 @@ spec:
     servingCertificates: {}
   installAttemptsLimit: 1
   installed: false
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: cluster-mx76p
+    version: v1beta1
   platform:
     vsphere:
       cluster: Cluster-1
