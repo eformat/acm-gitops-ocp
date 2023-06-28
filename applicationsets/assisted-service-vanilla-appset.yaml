@@ -1,0 +1,37 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: assisted-service-vanilla
+  namespace: open-cluster-management-global-set
+  labels:
+    rht-gitops.com/open-cluster-management-global-set: policies
+spec:
+  goTemplate: true
+  generators:
+  - clusterDecisionResource:
+      configMapRef: acm-placement
+      labelSelector:
+        matchLabels:
+          cluster.open-cluster-management.io/placement: placement-all-openshift
+      requeueAfterSeconds: 180
+  syncPolicy:
+    preserveResourcesOnDeletion: false
+  template:
+    metadata:
+      name: assisted-service-{{.name}}
+      annotations:
+        argocd.argoproj.io/compare-options: IgnoreExtraneous
+    spec:
+      project: default
+      destination:
+        server: "{{.server}}"
+        namespace: open-cluster-management-global-set
+      source:
+        repoURL: https://github.com/eformat/acm-gitops-ocp.git
+        path: assisted-service-vanilla-policy
+        targetRevision: main
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true

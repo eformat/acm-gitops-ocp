@@ -1,0 +1,3 @@
+resources:
+- 00-provisioning.yaml
+- 01-assisted-service-config.yaml
