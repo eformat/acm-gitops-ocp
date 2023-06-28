@@ -248,7 +248,7 @@ AppSet for Kustomize + Helm
 oc apply -f applicationsets/cluster-appset-vmc.yaml
 ```
 
-Sealed Secrets for VMC
+Sealed Secrets for VMC. Secret templates are in `secrets/` folder, adjust to suit.
 
 ```bash
 kubeseal < secrets/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-vsphere-creds-sealed-secret.yaml \
