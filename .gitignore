@@ -1,4 +1,4 @@
 charts/
 *~
 *.tgz
-secrets/
+secrets/*-secret.yaml
