@@ -2,11 +2,14 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: cluster-mx76p-infra
-  namespace: 'cluster-mx76p'
+  name: {{ include "vmc.fullname" . }}-infra
+  namespace: {{ include "vmc.fullname" . }}
+  labels:
+    machine.openshift.io/cluster-api-machine-role: infra
+    machine.openshift.io/cluster-api-machine-type: infra
 spec:
   clusterDeploymentRef:
-    name: 'cluster-mx76p'
+    name: {{ include "vmc.fullname" . }}
   labels:
     node-role.kubernetes.io/infra: ""
   name: infra

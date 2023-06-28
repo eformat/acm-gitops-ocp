@@ -1,0 +1,31 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: ztp-gitops-vmc-helm
+placementBindingDefaults:
+  name: ztp-gitops-vmc-helm
+policyDefaults:
+  placement:
+    placementName: placement-ztp-gitops-vmc-helm
+  categories:
+    - CM Configuration Management
+  complianceType: "musthave"
+  controls: 
+    - CM-2 Baseline Configuration
+  consolidateManifests: false
+  disabled: false
+  namespace: open-cluster-management-global-set
+  pruneObjectBehavior: "DeleteAll"
+  remediationAction: enforce
+  severity: medium
+  standards:
+    - NIST SP 800-53
+  policyAnnotations: {"argocd.argoproj.io/compare-options": "IgnoreExtraneous"}
+policies:
+  - name: ztp-gitops-vmc-helm
+    manifests:
+      - path: chart/
+        kustomizeOptions:
+          enableAlphaPlugins: true
+          enableHelm: true

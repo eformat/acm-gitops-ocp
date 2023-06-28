@@ -1,0 +1,18 @@
+installAttemptsLimit: ""
+fullnameOverride: ""
+baseDomain: ""
+imageSetRef: ""
+vsphere:
+  vCenter: ""
+  cluster: ""
+  datacenter: ""
+  defaultDatastore: ""
+  network: ""
+  folder: ""
+sealedSecrets:
+  install-config: ""
+  dockerconfigjson: ""
+  sshPrivatekey: ""
+  caCert: ""
+  vsphereUsername: ""
+  vspherePassword: ""

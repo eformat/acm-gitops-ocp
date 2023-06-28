@@ -1,0 +1,38 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: {{ include "vmc.fullname" . }}
+  namespace: {{ include "vmc.fullname" . }}
+  labels:
+    cloud: vSphere
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: default
+spec:
+  baseDomain: {{ .Values.baseDomain }}
+  clusterName: {{ include "vmc.fullname" . }}
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: {{ .Values.installAttemptsLimit }}
+  installed: false
+  platform:
+    vsphere:
+      cluster: {{ .Values.vsphere.cluster }}
+      certificatesSecretRef:
+        name: {{ include "vmc.fullname" . }}-vsphere-certs
+      credentialsSecretRef:
+        name: {{ include "vmc.fullname" . }}-vsphere-creds
+      vCenter: {{ .Values.vsphere.vCenter }}
+      datacenter: {{ .Values.vsphere.datacenter }}
+      defaultDatastore: {{ .Values.vsphere.defaultDatastore }}
+      network: {{ .Values.vsphere.network }}
+      folder: {{ .Values.vsphere.folder }}
+  provisioning:
+    installConfigSecretRef:
+      name: {{ include "vmc.fullname" . }}-install-config
+    sshPrivateKeySecretRef:
+      name: {{ include "vmc.fullname" . }}-ssh-private-key
+    imageSetRef:
+      name: {{ .Values.imageSetRef }}
+  pullSecretRef:
+    name: {{ include "vmc.fullname" . }}-pull-secret
