@@ -6,7 +6,6 @@ resources:
 - 01-cluster-vsphere-certs-sealed-secret.yaml
 - 01-vsphere-creds-sealed-secret.yaml
 - 02-clusterdeployment.yaml
-- 03-agentclusterinstall.yaml
 - 03-klusterlet.yaml
 - 04-managedcluster.yaml
 - 05-machinepool.yaml
