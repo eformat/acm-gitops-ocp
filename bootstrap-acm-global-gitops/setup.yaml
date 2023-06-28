@@ -14,7 +14,7 @@ spec:
     - name: DISABLE_DEFAULT_ARGOCD_INSTANCE
       value: "true"
     - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-      value: fteam-ci-cd,openshift-gitops,open-cluster-management-global-set
+      value: openshift-gitops,open-cluster-management-global-set
 ---
 apiVersion: apps.open-cluster-management.io/v1beta1
 kind: GitOpsCluster
