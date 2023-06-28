@@ -226,6 +226,62 @@ virsh net-start baz
 virsh net-autostart baz
 ```
 
+## VMC
+
+VMware gitops cluster deployment.
+
+Kustomize
+
+```bash
+kustomize build --enable-helm --enable-alpha-plugins gitops-vmc-policy/
+```
+
+Kustomize + Helm
+
+```bash
+kustomize build --enable-helm --enable-alpha-plugins gitops-vmc-policy-helm/
+```
+
+AppSet for Kustomize + Helm
+
+```bash
+oc apply -f applicationsets/cluster-appset-vmc.yaml
+```
+
+Sealed Secrets for VMC
+
+```bash
+kubeseal < secrets/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-vsphere-creds-sealed-secret.yaml \
+    -n cluster-mx76p \
+    --controller-namespace sealed-secrets \
+    --controller-name sealed-secrets \
+    -o yaml
+
+kubeseal < secrets/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-install-sealed-secret.yaml \
+    -n cluster-mx76p \
+    --controller-namespace sealed-secrets \
+    --controller-name sealed-secrets \
+    -o yaml
+
+kubeseal < secrets/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-pull-sealed-secret.yaml \
+    -n cluster-mx76p \
+    --controller-namespace sealed-secrets \
+    --controller-name sealed-secrets \
+    -o yaml
+
+kubeseal < secrets/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-ssh-private-key-sealed-secret.yaml \
+    -n cluster-mx76p \
+    --controller-namespace sealed-secrets \
+    --controller-name sealed-secrets \
+    -o yaml
+
+kubeseal < secrets/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-vsphere-certs-sealed-secret.yaml \
+    -n cluster-mx76p \
+    --controller-namespace sealed-secrets \
+    --controller-name sealed-secrets \
+    -o yaml
+```
+
 ## Notes
 
 Useful links and workarounds for mirror registry and disconnected installs. I am using a pull-secret for the quay transparent mirror only in this example.
