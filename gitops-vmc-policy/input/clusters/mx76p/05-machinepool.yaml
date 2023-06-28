@@ -2,17 +2,20 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: cluster-mx76p-worker
+  name: cluster-mx76p-infra
   namespace: 'cluster-mx76p'
 spec:
   clusterDeploymentRef:
     name: 'cluster-mx76p'
-  name: worker
+  labels:
+    machine.openshift.io/cluster-api-machine-role: infra
+    machine.openshift.io/cluster-api-machine-type: infra
+  name: infra
   platform:
     vsphere:
-      cpus: 4
+      cpus: 8
       coresPerSocket: 2
-      memoryMB: 16384
+      memoryMB: 24576
       osDisk:
         diskSizeGB: 120
   replicas: 3
