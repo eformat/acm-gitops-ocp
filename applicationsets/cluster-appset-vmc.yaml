@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: sno-cluster-vmc
+  name: cluster-vmc
   namespace: open-cluster-management-global-set
   labels:
     rht-gitops.com/open-cluster-management-global-set: policies
@@ -19,7 +19,7 @@ spec:
     preserveResourcesOnDeletion: false
   template:
     metadata:
-      name: sno-cluster-vmc-{{.name}}
+      name: cluster-vmc-{{.name}}
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
     spec:
