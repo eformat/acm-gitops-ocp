@@ -4,12 +4,26 @@ ACM, PolicyGenerator Kustomize Pugin, Helm, Sushy - to deploy a SNO bare metal c
 
 # 🤠 For the impatient
 
+Dependencies
+
 - Install RHACM Operator 2.6/2.7+ into your OpenShift4 cluster
-- Label your local hub cluster with `ztp-assisted-service=true` to setup provisioning
-- Label your local hub cluster with `ztp-gitops-sno=true` to deploy a sno bm instance
-- Label your cluster(s) with `update-cluster-version=true` to update the cluster version
+- Deploy SealedSecrets controller via helm chart globally
 - Bootstrap global ArgoCD for policy and Cluster installs
-- Add a worker node to your SNO instance post install
+
+BareMetal
+
+- Label your local hub cluster with `ztp-assisted-service=true` to setup provisioning
+- Label your local hub cluster with `ztp-gitops-sno=true` to deploy a sno bm cluster
+- Label your cluster(s) with `update-cluster-version=true` to update the cluster version
+
+VMC
+
+- Label your local hub cluster with `ztp-assisted-service-vanilla=true` to setup provisioning
+- Label your local hub cluster with `ztp-gitops-vmc-helm=true` to deploy a vmc cluster
+
+## Commands
+
+Bootstrap
 
 ```bash
 oc apply -f bootstrap-acm-global-gitops/setup.yaml
