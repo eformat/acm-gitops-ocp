@@ -33,6 +33,6 @@ spec:
     sshPrivateKeySecretRef:
       name: cluster-mx76p-ssh-private-key
     imageSetRef:
-      name: openshift-v4.13.3
+      name: img4.13.3-x86-64-appsub
   pullSecretRef:
     name: cluster-mx76p-pull-secret
