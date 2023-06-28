@@ -29,7 +29,7 @@ spec:
         namespace: open-cluster-management-global-set
       source:
         repoURL: https://github.com/eformat/acm-gitops-ocp.git
-        path: gitops-vmc-policy
+        path: gitops-vmc-policy-helm
         targetRevision: main
       syncPolicy:
         automated:
