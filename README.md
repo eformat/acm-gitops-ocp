@@ -226,7 +226,7 @@ virsh net-start baz
 virsh net-autostart baz
 ```
 
-## VMC
+# VMC
 
 VMware gitops cluster deployment.
 
