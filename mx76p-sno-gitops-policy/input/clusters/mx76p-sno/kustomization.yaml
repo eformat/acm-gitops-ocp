@@ -1,0 +1,10 @@
+resources:
+- 00-namespace.yaml
+- 01-cluster-ssh-private-key-sealed-secret.yaml
+- 01-cluster-install-sealed-secret.yaml
+- 01-cluster-pull-sealed-secret.yaml
+- 01-cluster-vsphere-certs-sealed-secret.yaml
+- 01-vsphere-creds-sealed-secret.yaml
+- 02-clusterdeployment.yaml
+- 03-klusterlet.yaml
+- 04-managedcluster.yaml

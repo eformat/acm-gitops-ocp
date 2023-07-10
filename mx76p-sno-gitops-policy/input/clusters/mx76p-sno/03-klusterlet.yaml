@@ -1,0 +1,22 @@
+---
+apiVersion: agent.open-cluster-management.io/v1
+kind: KlusterletAddonConfig
+metadata:
+  name: 'cluster-mx76p-sno'
+  namespace: 'cluster-mx76p-sno'
+spec:
+  clusterName: 'cluster-mx76p-sno'
+  clusterNamespace: 'cluster-mx76p-sno'
+  clusterLabels:
+    cloud: vSphere
+    vendor: OpenShift
+  applicationManager:
+    enabled: true
+  policyController:
+    enabled: true
+  searchCollector:
+    enabled: true
+  certPolicyController:
+    enabled: true
+  iamPolicyController:
+    enabled: true

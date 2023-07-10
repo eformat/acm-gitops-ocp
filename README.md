@@ -265,31 +265,31 @@ oc apply -f applicationsets/cluster-appset-vmc.yaml
 Sealed Secrets for VMC. Secret templates are in `secrets/` folder, adjust to suit.
 
 ```bash
-kubeseal < secrets/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-vsphere-creds-sealed-secret.yaml \
+kubeseal < secrets/cluster-mx76p/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-vsphere-creds-sealed-secret.yaml \
     -n cluster-mx76p \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-install-sealed-secret.yaml \
+kubeseal < secrets/cluster-mx76p/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-install-sealed-secret.yaml \
     -n cluster-mx76p \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-pull-sealed-secret.yaml \
+kubeseal < secrets/cluster-mx76p/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-pull-sealed-secret.yaml \
     -n cluster-mx76p \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-ssh-private-key-sealed-secret.yaml \
+kubeseal < secrets/cluster-mx76p/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-ssh-private-key-sealed-secret.yaml \
     -n cluster-mx76p \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-vsphere-certs-sealed-secret.yaml \
+kubeseal < secrets/cluster-mx76p/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-vsphere-certs-sealed-secret.yaml \
     -n cluster-mx76p \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
