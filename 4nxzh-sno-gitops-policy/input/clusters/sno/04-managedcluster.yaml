@@ -4,9 +4,9 @@ kind: ManagedCluster
 metadata:
   labels:
     cloud: vSphere
-    name: 'cluster-mx76p-sno'
+    name: 'cluster-4nxzh-sno'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
-  name: 'cluster-mx76p-sno'
+  name: 'cluster-4nxzh-sno'
 spec:
   hubAcceptsClient: true

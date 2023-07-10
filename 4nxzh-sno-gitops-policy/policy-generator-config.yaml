@@ -2,12 +2,12 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: mx76p-ztp-gitops-sno
+  name: 4nxzh-ztp-gitops-sno
 placementBindingDefaults:
-  name: mx76p-ztp-gitops-sno
+  name: 4nxzh-ztp-gitops-sno
 policyDefaults:
   placement:
-    placementName: placement-mx76p-ztp-gitops-sno
+    placementName: placement-4nxzh-ztp-gitops-sno
   categories:
     - CM Configuration Management
   complianceType: "musthave"

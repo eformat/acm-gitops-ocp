@@ -2,15 +2,15 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: 'cluster-mx76p-sno'
-  namespace: 'cluster-mx76p-sno'
+  name: 'cluster-4nxzh-sno'
+  namespace: 'cluster-4nxzh-sno'
   labels:
     cloud: 'vSphere'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
-  baseDomain: mx76p.dynamic.opentlc.com
-  clusterName: 'cluster-mx76p-sno'
+  baseDomain: 4nxzh.dynamic.opentlc.com
+  clusterName: 'cluster-4nxzh-sno'
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
@@ -18,20 +18,20 @@ spec:
     vsphere:
       cluster: Cluster-1
       certificatesSecretRef:
-        name: cluster-mx76p-sno-vsphere-certs
+        name: cluster-4nxzh-sno-vsphere-certs
       credentialsSecretRef:
-        name: cluster-mx76p-sno-vsphere-creds
+        name: cluster-4nxzh-sno-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
       defaultDatastore: WorkloadDatastore
-      network: 'segment-sandbox-mx76p'
-      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-mx76p'
+      network: 'segment-sandbox-4nxzh'
+      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-4nxzh'
   provisioning:
     installConfigSecretRef:
-      name: cluster-mx76p-sno-install-config
+      name: cluster-4nxzh-sno-install-config
     sshPrivateKeySecretRef:
-      name: cluster-mx76p-sno-ssh-private-key
+      name: cluster-4nxzh-sno-ssh-private-key
     imageSetRef:
       name: img4.13.3-x86-64-appsub
   pullSecretRef:
-    name: cluster-mx76p-sno-pull-secret
+    name: cluster-4nxzh-sno-pull-secret

@@ -4,11 +4,11 @@ kind: Placement
 metadata:
   labels:
     custom: gitops-operator-policy
-  name: placement-mx76p-ztp-gitops-sno
+  name: placement-4nxzh-ztp-gitops-sno
   namespace: open-cluster-management-global-set
 spec:
   predicates:
   - requiredClusterSelector:
       labelSelector:
         matchExpressions:
-          - {key: mx76p-ztp-gitops-sno, operator: In, values: ["true"]}
+          - {key: 4nxzh-ztp-gitops-sno, operator: In, values: ["true"]}
