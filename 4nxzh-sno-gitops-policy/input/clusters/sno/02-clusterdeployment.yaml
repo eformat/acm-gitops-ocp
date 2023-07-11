@@ -16,14 +16,14 @@ spec:
   installAttemptsLimit: 1
   platform:
     vsphere:
-      cluster: Cluster-1
+      cluster: /SDDC-Datacenter/host/Cluster-1
       certificatesSecretRef:
         name: cluster-4nxzh-sno-vsphere-certs
       credentialsSecretRef:
         name: cluster-4nxzh-sno-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
-      defaultDatastore: WorkloadDatastore
+      defaultDatastore: /SDDC-Datacenter/datastore/WorkloadDatastore
       network: 'segment-sandbox-4nxzh'
       folder: '/SDDC-Datacenter/vm/Workloads/sandbox-4nxzh'
   provisioning:
@@ -32,6 +32,6 @@ spec:
     sshPrivateKeySecretRef:
       name: cluster-4nxzh-sno-ssh-private-key
     imageSetRef:
-      name: img4.12.22-x86-64-appsub
+      name: img4.13.4-x86-64-appsub
   pullSecretRef:
     name: cluster-4nxzh-sno-pull-secret
