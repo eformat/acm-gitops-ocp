@@ -16,14 +16,14 @@ spec:
   installAttemptsLimit: 1
   platform:
     vsphere:
-      cluster: /SDDC-Datacenter/host/Cluster-1
+      cluster: Cluster-1
       certificatesSecretRef:
         name: cluster-4nxzh-sno-vsphere-certs
       credentialsSecretRef:
         name: cluster-4nxzh-sno-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
-      defaultDatastore: /SDDC-Datacenter/datastore/WorkloadDatastore
+      defaultDatastore: WorkloadDatastore
       network: 'segment-sandbox-4nxzh'
       folder: '/SDDC-Datacenter/vm/Workloads/sandbox-4nxzh'
   provisioning:
