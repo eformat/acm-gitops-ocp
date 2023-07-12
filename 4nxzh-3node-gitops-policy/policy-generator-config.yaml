@@ -2,12 +2,12 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: 4nxzh-ztp-gitops-sno
+  name: 4nxzh-ztp-gitops-3node
 placementBindingDefaults:
-  name: 4nxzh-ztp-gitops-sno
+  name: 4nxzh-ztp-gitops-3node
 policyDefaults:
   placement:
-    placementName: placement-4nxzh-ztp-gitops-sno
+    placementName: placement-4nxzh-ztp-gitops-3node
   categories:
     - CM Configuration Management
   complianceType: "musthave"
@@ -23,7 +23,7 @@ policyDefaults:
     - NIST SP 800-53
   policyAnnotations: {"argocd.argoproj.io/compare-options": "IgnoreExtraneous"}
 policies:
-  - name: ztp-gitops-sno
+  - name: ztp-gitops-3node
     manifests:
       - path: input/
         kustomizeOptions:
