@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-vmc-sno
+  name: cluster-vmc-3node
   namespace: open-cluster-management-global-set
   labels:
     rht-gitops.com/open-cluster-management-global-set: policies
@@ -19,7 +19,7 @@ spec:
     preserveResourcesOnDeletion: false
   template:
     metadata:
-      name: cluster-vmc-sno-{{.name}}
+      name: cluster-vmc-3node-{{.name}}
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
     spec:
@@ -29,7 +29,7 @@ spec:
         namespace: open-cluster-management-global-set
       source:
         repoURL: https://github.com/eformat/acm-gitops-ocp.git
-        path: 4nxzh-sno-gitops-policy
+        path: 4nxzh-3node-gitops-policy
         targetRevision: main
       syncPolicy:
         automated:
