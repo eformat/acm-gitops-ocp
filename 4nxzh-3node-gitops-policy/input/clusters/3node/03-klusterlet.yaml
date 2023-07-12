@@ -2,11 +2,11 @@
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: 'cluster-4nxzh-sno'
-  namespace: 'cluster-4nxzh-sno'
+  name: 'cluster-4nxzh-3node'
+  namespace: 'cluster-4nxzh-3node'
 spec:
-  clusterName: 'cluster-4nxzh-sno'
-  clusterNamespace: 'cluster-4nxzh-sno'
+  clusterName: 'cluster-4nxzh-3node'
+  clusterNamespace: 'cluster-4nxzh-3node'
   clusterLabels:
     cloud: vSphere
     vendor: OpenShift

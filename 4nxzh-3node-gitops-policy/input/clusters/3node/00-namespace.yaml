@@ -2,4 +2,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cluster-4nxzh-sno
+  name: cluster-4nxzh-3node

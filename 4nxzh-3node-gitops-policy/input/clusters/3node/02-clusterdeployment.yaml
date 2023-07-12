@@ -2,15 +2,15 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: 'cluster-4nxzh-sno'
-  namespace: 'cluster-4nxzh-sno'
+  name: 'cluster-4nxzh-3node'
+  namespace: 'cluster-4nxzh-3node'
   labels:
     cloud: 'vSphere'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
   baseDomain: 4nxzh.dynamic.opentlc.com
-  clusterName: 'cluster-4nxzh-sno'
+  clusterName: 'cluster-4nxzh-3node'
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
@@ -18,9 +18,9 @@ spec:
     vsphere:
       cluster: /SDDC-Datacenter/host/Cluster-1
       certificatesSecretRef:
-        name: cluster-4nxzh-sno-vsphere-certs
+        name: cluster-4nxzh-3node-vsphere-certs
       credentialsSecretRef:
-        name: cluster-4nxzh-sno-vsphere-creds
+        name: cluster-4nxzh-3node-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
       defaultDatastore: /SDDC-Datacenter/datastore/WorkloadDatastore
@@ -28,10 +28,10 @@ spec:
       folder: '/SDDC-Datacenter/vm/Workloads/sandbox-4nxzh'
   provisioning:
     installConfigSecretRef:
-      name: cluster-4nxzh-sno-install-config
+      name: cluster-4nxzh-3node-install-config
     sshPrivateKeySecretRef:
-      name: cluster-4nxzh-sno-ssh-private-key
+      name: cluster-4nxzh-3node-ssh-private-key
     imageSetRef:
       name: img4.13.4-x86-64-appsub
   pullSecretRef:
-    name: cluster-4nxzh-sno-pull-secret
+    name: cluster-4nxzh-3node-pull-secret
