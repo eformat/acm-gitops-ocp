@@ -16,7 +16,7 @@ spec:
           cluster.open-cluster-management.io/placement: placement-all-openshift
       requeueAfterSeconds: 180
   syncPolicy:
-    preserveResourcesOnDeletion: false
+    preserveResourcesOnDeletion: true
   template:
     metadata:
       name: cluster-vmc-3node-{{.name}}
