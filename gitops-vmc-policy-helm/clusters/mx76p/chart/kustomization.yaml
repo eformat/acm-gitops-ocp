@@ -5,7 +5,7 @@ helmCharts:
     installAttemptsLimit: 1
     fullnameOverride: cluster-mx76p
     baseDomain: mx76p.dynamic.opentlc.com
-    imageSetRef: img4.13.4-x86-64-appsub
+    imageSetRef: img4.12.23-x86-64-appsub
     vsphere:
       vCenter: portal.vc.opentlc.com
       cluster: /SDDC-Datacenter/host/Cluster-1
