@@ -69,7 +69,7 @@ spec:
   groups:
     - default
   rbac:
-    defaultPolicy: 'role:readonly'
+    defaultPolicy: 'role:admin'
     policy: |
       g, cluster-admins, role:admin
     scopes: '[groups]'
