@@ -20,4 +20,4 @@ spec:
       memoryMB: 24576
       osDisk:
         diskSizeGB: 120
-  replicas: 3
+  replicas: 4
