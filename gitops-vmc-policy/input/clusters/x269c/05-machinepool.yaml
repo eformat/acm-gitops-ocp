@@ -2,11 +2,11 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: cluster-mx76p-infra
-  namespace: 'cluster-mx76p'
+  name: cluster-x269c-infra
+  namespace: 'cluster-x269c'
 spec:
   clusterDeploymentRef:
-    name: 'cluster-mx76p'
+    name: 'cluster-x269c'
   labels:
     node-role.kubernetes.io/infra: ""
   name: infra

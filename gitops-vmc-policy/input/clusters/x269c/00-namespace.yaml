@@ -2,4 +2,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cluster-mx76p
+  name: cluster-x269c

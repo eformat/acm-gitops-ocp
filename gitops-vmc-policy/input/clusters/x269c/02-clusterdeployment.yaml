@@ -2,15 +2,15 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: 'cluster-mx76p'
-  namespace: 'cluster-mx76p'
+  name: 'cluster-x269c'
+  namespace: 'cluster-x269c'
   labels:
     cloud: 'vSphere'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
-  baseDomain: mx76p.dynamic.opentlc.com
-  clusterName: 'cluster-mx76p'
+  baseDomain: x269c.dynamic.opentlc.com
+  clusterName: 'cluster-x269c'
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
@@ -18,20 +18,20 @@ spec:
     vsphere:
       cluster: Cluster-1
       certificatesSecretRef:
-        name: cluster-mx76p-vsphere-certs
+        name: cluster-x269c-vsphere-certs
       credentialsSecretRef:
-        name: cluster-mx76p-vsphere-creds
+        name: cluster-x269c-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
       defaultDatastore: WorkloadDatastore
-      network: 'segment-sandbox-mx76p'
-      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-mx76p'
+      network: 'segment-sandbox-x269c'
+      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-x269c'
   provisioning:
     installConfigSecretRef:
-      name: cluster-mx76p-install-config
+      name: cluster-x269c-install-config
     sshPrivateKeySecretRef:
-      name: cluster-mx76p-ssh-private-key
+      name: cluster-x269c-ssh-private-key
     imageSetRef:
       name: img4.13.3-x86-64-appsub
   pullSecretRef:
-    name: cluster-mx76p-pull-secret
+    name: cluster-x269c-pull-secret

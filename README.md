@@ -256,41 +256,47 @@ Kustomize + Helm
 kustomize build --enable-helm --enable-alpha-plugins gitops-vmc-policy-helm/
 ```
 
-AppSet for Kustomize + Helm
+AppSet for Kustomize
 
 ```bash
 oc apply -f applicationsets/cluster-appset-vmc.yaml
 ```
 
+AppSet for Kustomize + Helm
+
+```bash
+oc apply -f applicationsets/cluster-appset-vmc-helm.yaml
+```
+
 Sealed Secrets for VMC. Secret templates are in `secrets/` folder, adjust to suit.
 
 ```bash
-kubeseal < secrets/cluster-mx76p/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-vsphere-creds-sealed-secret.yaml \
-    -n cluster-mx76p \
+kubeseal < secrets/cluster-x269c/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-vsphere-creds-sealed-secret.yaml \
+    -n cluster-x269c \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-mx76p/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-install-sealed-secret.yaml \
-    -n cluster-mx76p \
+kubeseal < secrets/cluster-x269c/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-install-sealed-secret.yaml \
+    -n cluster-x269c \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-mx76p/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-pull-sealed-secret.yaml \
-    -n cluster-mx76p \
+kubeseal < secrets/cluster-x269c/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-pull-sealed-secret.yaml \
+    -n cluster-x269c \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-mx76p/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-ssh-private-key-sealed-secret.yaml \
-    -n cluster-mx76p \
+kubeseal < secrets/cluster-x269c/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-ssh-private-key-sealed-secret.yaml \
+    -n cluster-x269c \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-mx76p/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/mx76p/01-cluster-vsphere-certs-sealed-secret.yaml \
-    -n cluster-mx76p \
+kubeseal < secrets/cluster-x269c/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-vsphere-certs-sealed-secret.yaml \
+    -n cluster-x269c \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
