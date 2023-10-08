@@ -4,11 +4,11 @@ kind: Placement
 metadata:
   labels:
     custom: gitops-operator-policy
-  name: placement-ztp-gitops-vmc-helm
+  name: placement-ztp-gitops-vmc
   namespace: open-cluster-management-global-set
 spec:
   predicates:
   - requiredClusterSelector:
       labelSelector:
         matchExpressions:
-          - {key: ztp-gitops-vmc-helm, operator: In, values: ["true"]}
+          - {key: ztp-gitops-vmc, operator: In, values: ["true"]}
