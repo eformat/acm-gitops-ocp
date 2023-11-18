@@ -51,7 +51,12 @@ metadata:
   name: global-policy
   namespace: open-cluster-management-global-set
 spec:
-  applicationSet: {}
+  applicationSet:
+    webhookServer:
+      ingress:
+        enabled: false
+      route:
+        enabled: false
   sso:
     dex:
       openShiftOAuth: true
