@@ -2,11 +2,11 @@
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: 'cluster-x269c'
-  namespace: 'cluster-x269c'
+  name: 'cluster-xms78'
+  namespace: 'cluster-xms78'
 spec:
-  clusterName: 'cluster-x269c'
-  clusterNamespace: 'cluster-x269c'
+  clusterName: 'cluster-xms78'
+  clusterNamespace: 'cluster-xms78'
   clusterLabels:
     cloud: vSphere
     vendor: OpenShift

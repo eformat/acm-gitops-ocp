@@ -2,15 +2,15 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: 'cluster-x269c'
-  namespace: 'cluster-x269c'
+  name: 'cluster-xms78'
+  namespace: 'cluster-xms78'
   labels:
     cloud: 'vSphere'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
-  baseDomain: x269c.dynamic.opentlc.com
-  clusterName: 'cluster-x269c'
+  baseDomain: xms78.dynamic.opentlc.com
+  clusterName: 'cluster-xms78'
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
@@ -18,20 +18,20 @@ spec:
     vsphere:
       cluster: Cluster-1
       certificatesSecretRef:
-        name: cluster-x269c-vsphere-certs
+        name: cluster-xms78-vsphere-certs
       credentialsSecretRef:
-        name: cluster-x269c-vsphere-creds
+        name: cluster-xms78-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
       defaultDatastore: WorkloadDatastore
-      network: 'segment-sandbox-x269c'
-      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-x269c'
+      network: 'segment-sandbox-xms78'
+      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-xms78'
   provisioning:
     installConfigSecretRef:
-      name: cluster-x269c-install-config
+      name: cluster-xms78-install-config
     sshPrivateKeySecretRef:
-      name: cluster-x269c-ssh-private-key
+      name: cluster-xms78-ssh-private-key
     imageSetRef:
       name: img4.13.13-x86-64-appsub
   pullSecretRef:
-    name: cluster-x269c-pull-secret
+    name: cluster-xms78-pull-secret

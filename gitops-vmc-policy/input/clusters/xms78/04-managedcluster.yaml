@@ -4,9 +4,9 @@ kind: ManagedCluster
 metadata:
   labels:
     cloud: vSphere
-    name: 'cluster-x269c'
+    name: 'cluster-xms78'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
-  name: 'cluster-x269c'
+  name: 'cluster-xms78'
 spec:
   hubAcceptsClient: true

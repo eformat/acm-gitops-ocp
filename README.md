@@ -271,32 +271,32 @@ oc apply -f applicationsets/cluster-appset-vmc-helm.yaml
 Sealed Secrets for VMC. Secret templates are in `secrets/` folder, adjust to suit.
 
 ```bash
-kubeseal < secrets/cluster-x269c/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-vsphere-creds-sealed-secret.yaml \
-    -n cluster-x269c \
+kubeseal < secrets/cluster-xms78/01-vsphere-creds-secret.yaml > gitops-vmc-policy/input/clusters/xms78/01-vsphere-creds-sealed-secret.yaml \
+    -n cluster-xms78 \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-x269c/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-install-sealed-secret.yaml \
-    -n cluster-x269c \
+kubeseal < secrets/cluster-xms78/01-cluster-install-secret.yaml > gitops-vmc-policy/input/clusters/xms78/01-cluster-install-sealed-secret.yaml \
+    -n cluster-xms78 \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-x269c/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-pull-sealed-secret.yaml \
-    -n cluster-x269c \
+kubeseal < secrets/cluster-xms78/01-cluster-pull-secret.yaml > gitops-vmc-policy/input/clusters/xms78/01-cluster-pull-sealed-secret.yaml \
+    -n cluster-xms78 \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-x269c/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-ssh-private-key-sealed-secret.yaml \
-    -n cluster-x269c \
+kubeseal < secrets/cluster-xms78/01-cluster-ssh-private-key-secret.yaml > gitops-vmc-policy/input/clusters/xms78/01-cluster-ssh-private-key-sealed-secret.yaml \
+    -n cluster-xms78 \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
 
-kubeseal < secrets/cluster-x269c/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/x269c/01-cluster-vsphere-certs-sealed-secret.yaml \
-    -n cluster-x269c \
+kubeseal < secrets/cluster-xms78/01-cluster-vsphere-certs-secret.yaml > gitops-vmc-policy/input/clusters/xms78/01-cluster-vsphere-certs-sealed-secret.yaml \
+    -n cluster-xms78 \
     --controller-namespace sealed-secrets \
     --controller-name sealed-secrets \
     -o yaml
