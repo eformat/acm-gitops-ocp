@@ -32,6 +32,6 @@ spec:
     sshPrivateKeySecretRef:
       name: cluster-7xbw7-ssh-private-key
     imageSetRef:
-      name: img4.13.13-x86-64-appsub
+      name: img4.13.21-x86-64-appsub
   pullSecretRef:
     name: cluster-7xbw7-pull-secret
