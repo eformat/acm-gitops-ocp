@@ -2,4 +2,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cluster-xms78
+  name: cluster-7xbw7

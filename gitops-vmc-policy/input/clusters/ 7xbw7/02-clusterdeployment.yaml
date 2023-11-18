@@ -2,15 +2,15 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: 'cluster-xms78'
-  namespace: 'cluster-xms78'
+  name: 'cluster-7xbw7'
+  namespace: 'cluster-7xbw7'
   labels:
     cloud: 'vSphere'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
-  baseDomain: xms78.dynamic.opentlc.com
-  clusterName: 'cluster-xms78'
+  baseDomain: 7xbw7.dynamic.opentlc.com
+  clusterName: 'cluster-7xbw7'
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
@@ -18,20 +18,20 @@ spec:
     vsphere:
       cluster: Cluster-1
       certificatesSecretRef:
-        name: cluster-xms78-vsphere-certs
+        name: cluster-7xbw7-vsphere-certs
       credentialsSecretRef:
-        name: cluster-xms78-vsphere-creds
+        name: cluster-7xbw7-vsphere-creds
       vCenter: portal.vc.opentlc.com
       datacenter: SDDC-Datacenter
       defaultDatastore: WorkloadDatastore
-      network: 'segment-sandbox-xms78'
-      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-xms78'
+      network: 'segment-sandbox-7xbw7'
+      folder: '/SDDC-Datacenter/vm/Workloads/sandbox-7xbw7'
   provisioning:
     installConfigSecretRef:
-      name: cluster-xms78-install-config
+      name: cluster-7xbw7-install-config
     sshPrivateKeySecretRef:
-      name: cluster-xms78-ssh-private-key
+      name: cluster-7xbw7-ssh-private-key
     imageSetRef:
       name: img4.13.13-x86-64-appsub
   pullSecretRef:
-    name: cluster-xms78-pull-secret
+    name: cluster-7xbw7-pull-secret
