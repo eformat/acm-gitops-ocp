@@ -82,6 +82,8 @@ spec:
     env:
     - name: KUSTOMIZE_PLUGIN_HOME
       value: /etc/kustomize/plugin
+    - name: POLICY_GEN_ENABLE_HELM
+      value: "true"
     initContainers:
     - name: policy-generator-install
       image: quay.io/eformat/policy-generator-plugin-image:latest
